@@ -1,0 +1,56 @@
+# DataSource Config 数据库相关配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.251.254.107:3306/covid19?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: c0v1d
+  data:
+    mongodb:
+      username: covid19user
+      password: c0v1d
+      host: 10.251.254.107
+      port: 27017
+      database: covid19
+  redis:
+    host: 10.251.254.107
+    port: 6379
+
+  mail:
+    host: smtp.163.com
+    port: 465
+    username: zyy20001008@163.com
+    #邮箱授权码
+    password: XPTLZDPKAWWHTSLI
+    default-encoding: UTF-8
+    protocol: smtp
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.socketFactory.port: 465
+      mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
+      mail.smtp.socketFactory.fallback: false
+
+  application:
+    name: service-oss
+
+  profiles:
+    active: dev
+
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-beijing.aliyuncs.com
+      keyid: LTAI5tCkXkcY5DGtbTDFJ6ZB
+      keysecret: p6gybNTMG3i4Q0mBq7SQXhqL4ruXTu
+      bucketname: buaa-software-covid-19
+
+
+# Logger Config
+logging:
+  level:
+    com.baomidou.mybatisplus.samples.quickstart: debug
+server:
+  port: 8081
+
